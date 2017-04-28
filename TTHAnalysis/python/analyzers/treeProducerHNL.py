@@ -1,5 +1,6 @@
 from PhysicsTools.Heppy.analyzers.core.AutoFillTreeProducer  import * 
 from CMGTools.TTHAnalysis.analyzers.ntupleTypes  import *
+from CMGTools.TTHAnalysis.analyzers.ntupleTypes  import *
 
 hnl_globalVariables = [
             NTupleVariable("lheHT", lambda ev : getattr(ev,"lheHT",-999), mcOnly=True, help="H_{T} computed from quarks and gluons in Heppy LHEAnalyzer"),
@@ -21,7 +22,7 @@ hnl_globalObjects = {
 
 hnl_collections = {
             "generatorSummary" : NTupleCollection("GenPart", genParticleWithLinksType, 100 , help="Hard scattering particles, with ancestry and links"),
-            "selectedLeptons" : NTupleCollection("LepGood",  leptonTypeExtra, 8, help="Leptons after the preselection"),
+            "selectedLeptons" : NTupleCollection("LepGood",  leptonTypeSusyExtra, 8, help="Leptons after the preselection"),
             "cleanJets"       : NTupleCollection("Jet",     jetTypeExtra, 15, help="Cental jets after full selection and cleaning, sorted by pt"),
             "ivf"       : NTupleCollection("SV",     svType, 20, help="SVs from IVF"),
             "LHE_weights"    : NTupleCollection("LHEweight",  weightsInfoType, 1000, mcOnly=True, help="LHE weight info"),
